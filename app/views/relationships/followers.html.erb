@@ -1,23 +1,6 @@
+<h2>Follower Users</h2>
 <% if @users.exists? %>
-  <% @users.each do |user| %>
-    <table>
-      <thead>
-        <tr>
-          <th>image</th>
-          <th>name</th>
-          <th></th>
-        </tr>
-      </thead>
-      <ybody>
-        <tr>
-          <td><%= user.get_profile_image %></td>
-          <td><%= user.name %></td>
-          <td>フォロー数: <%= user.followings.count %></td>
-          <td>フォロワー数: <%= user.followers.count %></td>
-        </tr>
-      </ybody>
-    </table>
-  <% end %>
+  <%= render '/users/index', users: @users %>
 <% else %>
   <p>ユーザーはいません</p>
 <% end %>
